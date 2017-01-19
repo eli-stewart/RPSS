@@ -87,7 +87,7 @@ function displayGameResult(resultId){
     } else if (result == -1) {
         updateScore(2);
         // Display that it was a loss
-        document.getElementById(resultId).innerHTML = message + "YOU LOOSE! ";
+        document.getElementById(resultId).innerHTML = message + "YOU LOSE! ";
         document.getElementById(resultId).className = "alert alert-danger";
     } else {
         // Display that it was a tie
