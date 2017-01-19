@@ -3,7 +3,7 @@
 var score = [0,0,0];
 
 // The variables store the current player's and computer's choices
-// 0 = Rock, 1 = Paper, 2 = Scissors
+// 0 = Rock, 1 = Paper, 2 = Scissors, 3 = Lizard, 4 = Spock
 var playerChoice;
 var computerChoice;
 
@@ -77,7 +77,7 @@ function displayGameResult(resultId){
     // Now play the game and store the result
     var result = playGame();
     // Create a message for the player
-    var message = "Your choice was " + choices[playerChoice] + " and the computer's choice was " + choices[computerChoice] + "<br/>";
+    var message = "Your choice was " + choices[playerChoice] + " and the computer's choice was " + choices[computerChoice] + ".<br/>";
     // Add to the base message if it was a win, loss, or tie
     if (result == 1) {
         // Display that it was a win
