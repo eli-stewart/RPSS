@@ -1,13 +1,15 @@
 // This is the varaible that stores the score.
 // score[0] = wins, score[1] = ties, score[2] = losses
-var score = [0,0,0];
+var score = [0, 0, 0];
+var currentScore = [0, 0, 0];
+var matchScore = [0, 0, 0];
 
 // The variables store the current player's and computer's choices
 // 0 = Rock, 1 = Paper, 2 = Scissors, 3 = Lizard, 4 = Spock
 var playerChoice;
 var computerChoice;
 
-function playGame(){
+function playGame() {
     // Here is the game ruleset algorithm
     if (playerChoice == computerChoice) {
         // We have a tie!
@@ -60,18 +62,24 @@ function playGame(){
     }
 }
 
-function displayScoreBoard(winsId, lossesId, tiesId){
+function displayScoreBoard(winsId, lossesId, tiesId) {
     document.getElementById(winsId).innerHTML = score[0];
     document.getElementById(lossesId).innerHTML = score[2];
     document.getElementById(tiesId).innerHTML = score[1];
 }
 
-function updateScore(val){
+function displayCurrentScoreBoard(currentWinsId, currentLossesId, currentTiesId) {
+    document.getElementById(currentWinsId).innerHTML = currentScore[0];
+    document.getElementById(currentLossesId).innerHTML = currentScore[2];
+    document.getElementById(currentTiesId).innerHTML = currentScore[1];
+}
+
+function updateScore(val) {
     ++score[val];
     console.log("The score is now " + score);
 }
 
-function displayGameResult(resultId){
+function displayGameResult(resultId) {
     // Define an array of text labels for the choices 0, 1, 2;
     var choices = ["Rock", "Paper", "Scissors", "Spock", "Lizard"];
     // Now play the game and store the result
