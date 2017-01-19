@@ -17,12 +17,40 @@ function playGame(){
         // Rock beats scissors - a win!
         console.log("win");
         return 1;
-    } else if (playerChoice == 1 && computerChoice == 0) {
-        // Paper beats scissors - a win!
+    } else if (playerChoice == 0 && computerChoice == 4) {
+        // Rock beats Lizard - a win!
         console.log("win");
         return 1;
-    } else if (playerChoice == 2 && computerChoice == 1) {
+    }else if (playerChoice == 1 && computerChoice == 1) {
+        // Paper beats Rock - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 1 && computerChoice == 3) {
+        // Paper beats Spock - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 2 && computerChoice == 1) {
         // Scissors beats paper - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 2 && computerChoice == 4) {
+        // Scissors beats lizard - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 3 && computerChoice == 2) {
+        // Spock beats scissors - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 3 && computerChoice == 0) {
+        // Spock beats rock - a win!
+        console.log("win");
+        return 1;
+    }else if (playerChoice == 4 && computerChoice == 3) {
+        // Lizard beats Spock - a win!
+        console.log("win");
+        return 1;
+    } else if (playerChoice == 4 && computerChoice == 1) {
+        // Lizard beats paper - a win!
         console.log("win");
         return 1;
     } else {
