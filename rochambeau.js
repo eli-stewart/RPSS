@@ -12,52 +12,51 @@ var computerChoice;
 function playGame() {
     // Here is the game ruleset algorithm
     if (playerChoice == computerChoice) {
-        // We have a tie!
+        // A tie
         console.log("tie");
         return 0;
     } else if (playerChoice == 0 && computerChoice == 2) {
-        // Rock beats scissors - a win!
+        // Rock beats scissors
         console.log("win");
         return 1;
     } else if (playerChoice == 0 && computerChoice == 4) {
-        // Rock beats Lizard - a win!
+        // Rock beats Lizard
         console.log("win");
         return 1;
     }else if (playerChoice == 1 && computerChoice == 1) {
-        // Paper beats Rock - a win!
+        // Paper beats Rock
         console.log("win");
         return 1;
     }else if (playerChoice == 1 && computerChoice == 3) {
-        // Paper beats Spock - a win!
+        // Paper beats Spock
         console.log("win");
         return 1;
     }else if (playerChoice == 2 && computerChoice == 1) {
-        // Scissors beats paper - a win!
-        console.log("win");
+        // Scissors beats paper
         return 1;
     }else if (playerChoice == 2 && computerChoice == 4) {
-        // Scissors beats lizard - a win!
+        // Scissors beats lizard
         console.log("win");
         return 1;
     }else if (playerChoice == 3 && computerChoice == 2) {
-        // Spock beats scissors - a win!
+        // Spock beats scissors
         console.log("win");
         return 1;
     }else if (playerChoice == 3 && computerChoice == 0) {
-        // Spock beats rock - a win!
+        // Spock beats rock
         console.log("win");
         return 1;
     }else if (playerChoice == 4 && computerChoice == 3) {
-        // Lizard beats Spock - a win!
+        // Lizard beats Spock
         console.log("win");
         return 1;
     } else if (playerChoice == 4 && computerChoice == 1) {
-        // Lizard beats paper - a win!
+        // Lizard beats paper
         console.log("win");
         return 1;
     } else {
-        // All other combinations are losses
-        console.log("lose");
+        // All loss possibilities
+        console.log("loss");
         return -1;
     }
 }
@@ -81,7 +80,7 @@ function updateScore(val) {
 
 function displayGameResult(resultId) {
     // Define an array of text labels for the choices 0, 1, 2;
-    var choices = ["Rock", "Paper", "Scissors", "Spock", "Lizard"];
+    var choices = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]; // array including all possibilities
     // Now play the game and store the result
     var result = playGame();
     // Create a message for the player
@@ -113,6 +112,6 @@ function storePlayerChoice(choice) {
 
 function storeComputerChoice() {
     // Generate computer's random choice
-    computerChoice = Math.floor(Math.random()*5);
+    computerChoice = Math.floor(Math.random()*5); // randomizer of all 5 options
     console.log("Computer choice = " + computerChoice);
 }
