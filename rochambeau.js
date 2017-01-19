@@ -67,15 +67,20 @@ function displayScoreBoard(winsId, lossesId, tiesId) {
     document.getElementById(tiesId).innerHTML = score[1];
 }
 
+function updateScore(val) {
+    ++score[val];
+    console.log("The score is now " + score);
+}
+
 function displayCurrentScoreBoard(currentWinsId, currentLossesId, currentTiesId) {
     document.getElementById(currentWinsId).innerHTML = currentScore[0];
     document.getElementById(currentLossesId).innerHTML = currentScore[2];
     document.getElementById(currentTiesId).innerHTML = currentScore[1];
 }
 
-function updateScore(val) {
+function updateCurrentScore(val) {
     ++score[val];
-    console.log("The score is now " + score);
+    console.log("The score is now" + currentScore)
 }
 
 function displayGameResult(resultId) {
