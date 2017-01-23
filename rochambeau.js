@@ -2,7 +2,7 @@
 // score[0] = wins, score[1] = ties, score[2] = losses
 var score = [0, 0, 0];
 var currentScore = [0, 0, 0];
-var matchScore = [0, 0, 0];
+var matchScore = [0, 0];
 
 // The variables store the current player's and computer's choices
 // 0 = Rock, 1 = Paper, 2 = Scissors, 3 = Lizard, 4 = Spock
@@ -67,20 +67,25 @@ function displayScoreBoard(winsId, lossesId, tiesId) {
     document.getElementById(tiesId).innerHTML = score[1];
 }
 
-function updateScore(val) {
-    ++score[val];
-    console.log("The score is now " + score);
-}
-
-function displayCurrentScoreBoard(currentWinsId, currentLossesId, currentTiesId) {
+function displayCurrentScore(currentWinsId, currentLossesId, currentTiesId) {
     document.getElementById(currentWinsId).innerHTML = currentScore[0];
     document.getElementById(currentLossesId).innerHTML = currentScore[2];
     document.getElementById(currentTiesId).innerHTML = currentScore[1];
 }
 
-function updateCurrentScore(val) {
+function displayMatch(matchWinsId, matchLossesId) {
+    document.getElementById(matchWinsId).innerHTML = matchScore[0];
+    document.getElementById(matchLossesId).innerHTML = matchScore[2];
+}
+
+function updateScore(val) {
     ++score[val];
-    console.log("The score is now" + currentScore)
+    ++currentScore[val];
+    console.log("The score is now " + score);
+}
+
+function updateMatch(val) {
+    ++matchScore[val];
 }
 
 function displayGameResult(resultId) {
@@ -119,4 +124,18 @@ function storeComputerChoice() {
     // Generate computer's random choice
     computerChoice = Math.floor(Math.random()*5); // randomizer of all 5 options
     console.log("Computer choice = " + computerChoice);
+}
+
+function match() {
+    if (currentScore[0] == 2) {
+        // Add win to match column and clear match
+        ++matchScore[0];
+        currentScore[0] == 0;
+        currentScore[1] == 0;
+        currentScore[2] == 0;
+    } else if (currentScore[2] == 2) {
+        // Add loss to match column and clear match
+        ++matchScore[1];
+        currentScore == [0, 0, 0];
+    }
 }
