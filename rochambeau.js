@@ -75,7 +75,7 @@ function displayCurrentScore(currentWinsId, currentLossesId, currentTiesId) {
 
 function displayMatch(matchWinsId, matchLossesId) {
     document.getElementById(matchWinsId).innerHTML = matchScore[0];
-    document.getElementById(matchLossesId).innerHTML = matchScore[2];
+    document.getElementById(matchLossesId).innerHTML = matchScore[1];
 }
 
 function updateScore(val) {
@@ -126,16 +126,16 @@ function storeComputerChoice() {
     console.log("Computer choice = " + computerChoice);
 }
 
+function clearCurrentScore() {
+    currentScore == [0, 0, 0];
+}
+
 function match() {
     if (currentScore[0] == 2) {
-        // Add win to match column and clear match
-        ++matchScore[0];
-        currentScore[0] == 0;
-        currentScore[1] == 0;
-        currentScore[2] == 0;
+        updateMatch(0);
+        clearCurrentScore();
     } else if (currentScore[2] == 2) {
-        // Add loss to match column and clear match
-        ++matchScore[1];
-        currentScore == [0, 0, 0];
+        updateMatch(1);
+        clearCurrentScore();
     }
 }
